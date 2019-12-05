@@ -9,4 +9,5 @@ Description: Draw a bubble plot, a scatterplot with varying symbol sizes and
   supported, including vectors, matrices, data frames, formulas, etc.
 License: GPL (>= 2)
 Encoding: UTF-8
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.2
+Roxygen: list(old_usage=TRUE)

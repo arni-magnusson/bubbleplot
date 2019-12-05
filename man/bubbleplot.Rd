@@ -8,24 +8,9 @@
 \usage{
 bubbleplot(x, ...)
 
-\method{bubbleplot}{default}(
-  x,
-  y,
-  z,
-  std = TRUE,
-  pow = 0.5,
-  add = FALSE,
-  rev = FALSE,
-  type = "p",
-  ylim = NULL,
-  xlab = NULL,
-  ylab = NULL,
-  pch = c(16, 1),
-  cex.points = 1,
-  col = "black",
-  bg = par("bg"),
-  ...
-)
+\method{bubbleplot}{default}(x, y, z, std = TRUE, pow = 0.5, add = FALSE,
+  rev = FALSE, type = "p", ylim = NULL, xlab = NULL, ylab = NULL,
+  pch = c(16, 1), cex.points = 1, col = "black", bg = par("bg"), ...)
 
 \method{bubbleplot}{formula}(formula, data, subset, na.action = NULL, ...)
 }
