@@ -32,6 +32,18 @@
 #' Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.
 #'
 #' @examples
+#' # Tree circumference
+#' bubbleplot(circumference~Tree+age, Orange, pow=1, cex=2)
+#'
+#' fm <- nlme(circumference~phi1/(1+exp(-(age-phi2)/phi3)),
+#'            fixed=phi1+phi2+phi3~1, random=phi1~1|Tree,
+#'            data=Orange, start=c(phi1=200,phi2=800,phi3=400))
+#'
+#' # Model residuals
+#' bubbleplot(residuals(fm)~Tree+age, Orange)
+#' bubbleplot(residuals(fm)~Tree+age, Orange, cex=2.5, pch=16,
+#'            col=c("dodgerblue","orange"))
+#'
 #' # Richter magnitude, amplitude, and energy release
 #' bubbleplot(mag~long+lat, quakes)
 #' bubbleplot(10^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
