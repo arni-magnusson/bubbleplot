@@ -64,3 +64,10 @@ Draw bubble plot, a scatterplot with varying symbol sizes and colors.
 \note{
 Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.
 }
+\examples{
+# Richter magnitude, amplitude, and energy release
+bubbleplot(mag~long+lat, quakes)
+bubbleplot(10^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
+bubbleplot(sqrt(1000)^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
+
+}
