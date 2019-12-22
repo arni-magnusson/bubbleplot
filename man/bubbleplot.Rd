@@ -64,7 +64,8 @@ bubble sizes and \code{x} and \code{y} determine bubble locations.}
 Draw a bubble plot, a scatterplot with varying symbol sizes and colors.
 }
 \note{
-Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.
+Negative \code{z} values are drawn in \code{pch[2]}, \code{col[2]}, and
+\code{bg[2]}.
 }
 \examples{
 # Tree circumference
@@ -80,8 +81,17 @@ bubbleplot(residuals(fm)~Tree+age, Orange, cex=2.5, pch=16,
            col=c("dodgerblue","orange"))
 
 # Richter magnitude, amplitude, and energy release
-bubbleplot(mag~long+lat, quakes)
+bubbleplot(mag~long+lat, quakes, pch=1)
 bubbleplot(10^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 bubbleplot(sqrt(1000)^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 
+}
+\seealso{
+\code{\link{points}} is the underlying function used to draw the bubbles.
+
+\code{\link{symbols}} can also draw bubbles, but does not handle negative
+\code{z} values or have convenience features such as \code{pow} and
+\code{rev}.
+
+\code{\link{bubbleplot-package}} gives an overview of the package.
 }

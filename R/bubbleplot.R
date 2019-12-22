@@ -29,7 +29,17 @@
 #' @param na.action how \code{NA} values are handled.
 #'
 #' @note
-#' Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.
+#' Negative \code{z} values are drawn in \code{pch[2]}, \code{col[2]}, and
+#' \code{bg[2]}.
+#'
+#' @seealso
+#' \code{\link{points}} is the underlying function used to draw the bubbles.
+#'
+#' \code{\link{symbols}} can also draw bubbles, but does not handle negative
+#' \code{z} values or have convenience features such as \code{pow} and
+#' \code{rev}.
+#'
+#' \code{\link{bubbleplot-package}} gives an overview of the package.
 #'
 #' @examples
 #' # Tree circumference
@@ -45,7 +55,7 @@
 #'            col=c("dodgerblue","orange"))
 #'
 #' # Richter magnitude, amplitude, and energy release
-#' bubbleplot(mag~long+lat, quakes)
+#' bubbleplot(mag~long+lat, quakes, pch=1)
 #' bubbleplot(10^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 #' bubbleplot(sqrt(1000)^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 #'
@@ -115,10 +125,10 @@ bubbleplot.default <- function(x, y, z, std=TRUE, pow=0.5, add=FALSE, rev=FALSE,
 
   if(!add)
     suppressWarnings(plot(x, y, type="n", ylim=ylim, xlab=xlab, ylab=ylab, ...))
-  suppressWarnings(points(x[z>0], y[z>0], type=type, pch=pch[1], cex=mycex[z>0],
-                          col=col[1], bg=bg[1], ...))
-  suppressWarnings(points(x[z<0], y[z<0], type=type, pch=pch[2], cex=mycex[z<0],
-                          col=col[2], bg=bg[2], ...))
+  suppressWarnings(points(x[z>0], y[z>0], type=type, cex=mycex[z>0],
+                          pch=pch[1], col=col[1], bg=bg[1], ...))
+  suppressWarnings(points(x[z<0], y[z<0], type=type, cex=mycex[z<0],
+                          pch=pch[2], col=col[2], bg=bg[2], ...))
 }
 
 #' @rdname bubbleplot
