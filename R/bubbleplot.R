@@ -94,9 +94,11 @@ bubbleplot.formula <- function(formula, data, subset, na.action=NULL, ...)
   if(is.matrix(eval(m$data,parent.frame())))
     m$data <- as.data.frame(data)
   m$... <- NULL
-  m$na.action <- na.action
-  m[[1L]] <- as.name("model.frame")
+  m[[1L]] <- quote(model.frame)
   mf <- eval(m, parent.frame())
+
+  if(ncol(mf) < 3)
+    stop("formula must have the form z~x+y")
 
   bubbleplot.default(mf[c(2,3,1)], ...)
 }
