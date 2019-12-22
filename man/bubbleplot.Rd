@@ -15,8 +15,10 @@ bubbleplot(x, ...)
 \method{bubbleplot}{formula}(formula, data, subset, na.action = NULL, ...)
 }
 \arguments{
-\item{x}{a vector of values for the horizontal axis, or a data frame
-containing \code{x}, \code{y}, and \code{z} in that order.}
+\item{x}{a vector of values for the horizontal axis. Can also be a
+2-dimensional matrix or table data frame (x values in column names and
+y values in rows), or a data frame containing \code{x}, \code{y}, and
+\code{z} in that order.}
 
 \item{\dots}{passed to \code{bubbleplot.*} methods.}
 
@@ -59,7 +61,7 @@ bubble sizes and \code{x} and \code{y} determine bubble locations.}
 \item{na.action}{how \code{NA} values are handled.}
 }
 \description{
-Draw bubble plot, a scatterplot with varying symbol sizes and colors.
+Draw a bubble plot, a scatterplot with varying symbol sizes and colors.
 }
 \note{
 Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.

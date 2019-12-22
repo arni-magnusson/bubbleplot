@@ -1,9 +1,11 @@
 #' Bubble Plot
 #'
-#' Draw bubble plot, a scatterplot with varying symbol sizes and colors.
+#' Draw a bubble plot, a scatterplot with varying symbol sizes and colors.
 #'
-#' @param x a vector of values for the horizontal axis, or a data frame
-#'        containing \code{x}, \code{y}, and \code{z} in that order.
+#' @param x a vector of values for the horizontal axis. Can also be a
+#'        2-dimensional matrix or table data frame (x values in column names and
+#'        y values in rows), or a data frame containing \code{x}, \code{y}, and
+#'        \code{z} in that order.
 #' @param y a vector of values for the vertical axis.
 #' @param z a vector of values determining the bubble sizes.
 #' @param std whether to standardize \code{z} by dividing with \code{mean(z)}.
@@ -57,6 +59,18 @@ bubbleplot.default <- function(x, y, z, std=TRUE, pow=0.5, add=FALSE, rev=FALSE,
   pch <- rep(pch, length.out=2)
   col <- rep(col, length.out=2)
   bg <- rep(bg, length.out=2)
+
+  if(is.matrix(x))  # matrix or table
+  {
+    dnn <- names(dimnames(x))
+    if(is.null(xlab))
+      xlab <- if(is.null(dnn)) "" else dnn[2]
+    if(is.null(ylab))
+      ylab <- if(is.null(dnn)) "" else dnn[1]
+    y <- as.data.frame(as.table(x))[[1]]
+    z <- as.data.frame(as.table(x))[[3]]
+    x <- as.data.frame(as.table(x))[[2]]
+  }
 
   if(is.list(x))  # data.frame or list
   {
