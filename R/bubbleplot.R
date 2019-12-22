@@ -7,9 +7,9 @@
 #' @param y a vector of values for the vertical axis.
 #' @param z a vector of values determining the bubble sizes.
 #' @param std whether to standardize \code{z} by dividing with \code{mean(z)}.
-#' @param pow a power coefficient for the bubble sizes (\code{0.5} is
-#'        \code{sqrt}).
-#' @param add whether to add bubbles to existing plot.
+#' @param pow a power coefficient for the bubble sizes (\code{0.5} is the square
+#'        root).
+#' @param add whether to add bubbles to an existing plot.
 #' @param rev whether to reverse the y axis.
 #' @param cex.points scales all bubble sizes.
 #' @param type passed to \code{points}.
@@ -25,8 +25,6 @@
 #' @param data where formula terms are stored, e.g. data frame or list.
 #' @param subset a logical vector specifying which data to plot.
 #' @param na.action how \code{NA} values are handled.
-#'
-#' @return \code{NULL}, but a bubble plot is drawn.
 #'
 #' @note
 #' Negative \code{z} values are drawn in \code{col[2]} and \code{bg[2]}.

@@ -1,6 +1,6 @@
 Package: bubbleplot
 Version: 1.0-0
-Date: 2019-11-18
+Date: 2019-12-22
 Title: Bubble Plot, a Scatter Plot with Varying Symbol Sizes and Colors
 Authors@R: person("Arni", "Magnusson", role=c("aut","cre"), email="arni.magnusson@ices.dk")
 Imports: graphics

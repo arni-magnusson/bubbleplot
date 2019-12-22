@@ -26,10 +26,10 @@ containing \code{x}, \code{y}, and \code{z} in that order.}
 
 \item{std}{whether to standardize \code{z} by dividing with \code{mean(z)}.}
 
-\item{pow}{a power coefficient for the bubble sizes (\code{0.5} is
-\code{sqrt}).}
+\item{pow}{a power coefficient for the bubble sizes (\code{0.5} is the square
+root).}
 
-\item{add}{whether to add bubbles to existing plot.}
+\item{add}{whether to add bubbles to an existing plot.}
 
 \item{rev}{whether to reverse the y axis.}
 
@@ -57,9 +57,6 @@ bubble sizes and \code{x} and \code{y} determine bubble locations.}
 \item{subset}{a logical vector specifying which data to plot.}
 
 \item{na.action}{how \code{NA} values are handled.}
-}
-\value{
-\code{NULL}, but a bubble plot is drawn.
 }
 \description{
 Draw bubble plot, a scatterplot with varying symbol sizes and colors.
