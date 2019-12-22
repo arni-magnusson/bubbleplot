@@ -36,6 +36,7 @@
 #' bubbleplot(sqrt(1000)^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 #'
 #' @importFrom graphics par plot points
+#' @importFrom utils type.convert
 #'
 #' @export
 
@@ -76,6 +77,10 @@ bubbleplot.default <- function(x, y, z, std=TRUE, pow=0.5, add=FALSE, rev=FALSE,
     xlab <- deparse(substitute(x))
   if(is.null(ylab))
     ylab <- deparse(substitute(y))
+
+  ## Convert factor to numeric
+  x <- type.convert(as.character(x))
+  y <- type.convert(as.character(y))
 
   if(std)
     mycex <- cex.points * (abs(z)/mean(abs(z)))^pow
