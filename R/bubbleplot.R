@@ -106,10 +106,6 @@ bubbleplot.default <- function(x, y, z, std=TRUE, pow=0.5, add=FALSE, rev=FALSE,
     x <- x[[1]]
   }
 
-  if(is.null(ylim))
-    ylim <- range(y)
-  if(rev)
-    ylim <- rev(ylim)
   if(is.null(xlab))
     xlab <- deparse(substitute(x))
   if(is.null(ylab))
@@ -118,6 +114,11 @@ bubbleplot.default <- function(x, y, z, std=TRUE, pow=0.5, add=FALSE, rev=FALSE,
   ## Convert factor to numeric
   x <- type.convert(as.character(x))
   y <- type.convert(as.character(y))
+
+  if(is.null(ylim))
+    ylim <- range(y)
+  if(rev)
+    ylim <- rev(ylim)
 
   if(std)
     mycex <- cex.points * (abs(z)/mean(abs(z)))^pow
