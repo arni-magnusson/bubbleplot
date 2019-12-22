@@ -49,7 +49,7 @@ root).}
 
 \item{bg}{passed to \code{points}.}
 
-\item{formula}{has the form \code{z~x+y}, where \code{z} determines the
+\item{formula}{has the form \code{z ~ x + y}, where \code{z} determines the
 bubble sizes and \code{x} and \code{y} determine bubble locations.}
 
 \item{data}{where formula terms are stored, e.g. data frame or list.}

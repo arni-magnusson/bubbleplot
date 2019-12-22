@@ -20,7 +20,7 @@
 #' @param col passed to \code{points}.
 #' @param bg passed to \code{points}.
 #' @param \dots passed to \code{bubbleplot.*} methods.
-#' @param formula has the form \code{z~x+y}, where \code{z} determines the
+#' @param formula has the form \code{z ~ x + y}, where \code{z} determines the
 #'        bubble sizes and \code{x} and \code{y} determine bubble locations.
 #' @param data where formula terms are stored, e.g. data frame or list.
 #' @param subset a logical vector specifying which data to plot.
@@ -109,7 +109,7 @@ bubbleplot.formula <- function(formula, data, subset, na.action=NULL, ...)
   mf <- eval(m, parent.frame())
 
   if(ncol(mf) < 3)
-    stop("formula must have the form z~x+y")
+    stop("formula must have the form z ~ x + y")
 
   bubbleplot.default(mf[c(2,3,1)], ...)
 }
