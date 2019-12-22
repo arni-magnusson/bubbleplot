@@ -4,6 +4,7 @@ Date: 2019-12-22
 Title: Bubble Plot, a Scatter Plot with Varying Symbol Sizes and Colors
 Authors@R: person("Arni", "Magnusson", role=c("aut","cre"), email="arni.magnusson@ices.dk")
 Imports: graphics, utils
+Suggests: nlme
 Description: Draw a bubble plot, a scatterplot with varying symbol sizes and
   colors, or add points to existing plots. A variety of input formats are
   supported, including vectors, matrices, data frames, formulas, etc.
