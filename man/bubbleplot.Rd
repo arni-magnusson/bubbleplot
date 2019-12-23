@@ -69,12 +69,28 @@ length 2, where negative \code{z} values are drawn in \code{pch[2]},
 \code{col[2]}, and \code{bg[2]}.
 }
 \examples{
-# Data frame
+# 1  Formula
+bubbleplot(Catch~Age+Year, data=catch.d)
+# Compare this plot with catch.m layout
+print(catch.m)
+bubbleplot(Catch~Age+Year, data=catch.d, rev=TRUE, las=TRUE)
+
+# 2  Data frame
+bubbleplot(catch.d)
 bubbleplot(Orange)
 # Visualize tree transverse section at breast height
 bubbleplot(Orange, pow=1, cex=2, pch=21, col="darkred", bg="peru", lwd=1.5)
 
-# Positive and negative values
+# 3  Matrix or table
+bubbleplot(catch.m)
+catch.t <- xtabs(Catch~Year+Age, catch.d)
+bubbleplot(catch.t)
+
+# 4  Positive and negative values
+bubbleplot(catch.r)
+bubbleplot(Resid~Age+Year, catch.r, subset=Age \%in\% 4:9,
+           rev=TRUE, xlim=c(3.5,9.5), cex=1.3)
+# Residuals from orange tree model
 library(nlme)
 fm <- nlme(circumference~phi1/(1+exp(-(age-phi2)/phi3)),
            fixed=phi1+phi2+phi3~1, random=phi1~1|Tree,
@@ -83,7 +99,7 @@ bubbleplot(residuals(fm)~Tree+age, Orange)
 bubbleplot(residuals(fm)~Tree+age, Orange, cex=2.5, pch=16,
            col=c("dodgerblue","orange"))
 
-# Richter magnitude, amplitude, and energy release
+# 5  Richter magnitude, amplitude, and energy release
 bubbleplot(mag~long+lat, quakes, pch=1)
 bubbleplot(10^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))
 bubbleplot(sqrt(1000)^mag~long+lat, quakes, cex=1.2, col=gray(0, 0.3))

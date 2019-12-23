@@ -41,9 +41,23 @@
 #' \code{\link{bubbleplot-package}} gives an overview of the package.
 #'
 #' @examples
-#' bubbleplot(catch.m)
+#' # 1  Formula
+#' bubbleplot(Catch~Age+Year, data=catch.d)
+#' # Compare this plot with catch.m layout
+#' print(catch.m)
+#' bubbleplot(Catch~Age+Year, data=catch.d, rev=TRUE, las=TRUE)
+#'
+#' # 2  Data frame
 #' bubbleplot(catch.d)
-#' bubbleplot(Catch~Age+Year, catch.d)
-#' bubbleplot(Catch~Age+Year, catch.d, rev=TRUE, las=1)
+#'
+#' # 3  Matrix or table
+#' bubbleplot(catch.m)
+#' catch.t <- xtabs(Catch~Year+Age, catch.d)
+#' bubbleplot(catch.t)
+#'
+#' # 4  Positive and negative values
+#' bubbleplot(catch.r)
+#' bubbleplot(Resid~Age+Year, catch.r, subset=Age %in% 4:9,
+#'            rev=TRUE, xlim=c(3.5,9.5), cex=1.3)
 
 NA
