@@ -14,6 +14,12 @@
 #' \tabular{ll}{
 #'   \code{\link{bubbleplot}} \tab Bubble plot\cr
 #' }
+#' \emph{Examples:}
+#' \tabular{ll}{
+#'   \code{\link{catch.d}} \tab Catch at age data frame\cr
+#'   \code{\link{catch.m}} \tab Catch at age matrix\cr
+#'   \code{\link{catch.r}} \tab Catch at age residuals
+#' }
 #'
 #' @author Arni Magnusson.
 
