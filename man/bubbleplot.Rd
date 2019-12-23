@@ -16,9 +16,9 @@ bubbleplot(x, ...)
 }
 \arguments{
 \item{x}{a vector of values for the horizontal axis. Can also be a
-2-dimensional matrix or table data frame (x values in column names and
-y values in rows), or a data frame containing \code{x}, \code{y}, and
-\code{z} in that order.}
+2-dimensional matrix or table (x values in column names and y values
+in rows), or a data frame containing \code{x}, \code{y}, and \code{z}
+in that order.}
 
 \item{\dots}{passed to \code{bubbleplot.*} methods.}
 
@@ -64,8 +64,9 @@ bubble sizes and \code{x} and \code{y} determine bubble locations.}
 Draw a bubble plot, a scatterplot with varying symbol sizes and colors.
 }
 \note{
-Negative \code{z} values are drawn in \code{pch[2]}, \code{col[2]}, and
-\code{bg[2]}.
+The \code{pch}, \code{col}, and \code{bg} arguments can be be vectors of
+length 2, where negative \code{z} values are drawn in \code{pch[2]},
+\code{col[2]}, and \code{bg[2]}.
 }
 \examples{
 # Tree circumference

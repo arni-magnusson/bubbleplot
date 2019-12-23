@@ -3,9 +3,9 @@
 #' Draw a bubble plot, a scatterplot with varying symbol sizes and colors.
 #'
 #' @param x a vector of values for the horizontal axis. Can also be a
-#'        2-dimensional matrix or table data frame (x values in column names and
-#'        y values in rows), or a data frame containing \code{x}, \code{y}, and
-#'        \code{z} in that order.
+#'        2-dimensional matrix or table (x values in column names and y values
+#'        in rows), or a data frame containing \code{x}, \code{y}, and \code{z}
+#'        in that order.
 #' @param y a vector of values for the vertical axis.
 #' @param z a vector of values determining the bubble sizes.
 #' @param std whether to standardize \code{z} by dividing with \code{mean(z)}.
@@ -29,8 +29,9 @@
 #' @param na.action how \code{NA} values are handled.
 #'
 #' @note
-#' Negative \code{z} values are drawn in \code{pch[2]}, \code{col[2]}, and
-#' \code{bg[2]}.
+#' The \code{pch}, \code{col}, and \code{bg} arguments can be be vectors of
+#' length 2, where negative \code{z} values are drawn in \code{pch[2]},
+#' \code{col[2]}, and \code{bg[2]}.
 #'
 #' @seealso
 #' \code{\link{points}} is the underlying function used to draw the bubbles.
