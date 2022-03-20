@@ -4,13 +4,15 @@
 \name{catch.m}
 \alias{catch.m}
 \title{Catch at Age Matrix}
-\format{Matrix with years as row names and ages in columns:
+\format{
+Matrix with years as row names and ages in columns:
 \tabular{ll}{
   \code{3} \tab number of three-year-olds in the catch (thousands)\cr
   \code{4} \tab number of four-year-olds in the catch (thousands)\cr
   \tab\dots\cr
   \code{14} \tab number of fourteen-year-olds in the catch (thousands)
-}}
+}
+}
 \source{
 ICES (2015) Report of the North-Western Working Group (NWWG).
 \href{https://ices.dk/sites/pub/Publication\%20Reports/Expert\%20Group\%20Report/acom/2015/NWWG/01\%20NWWG\%20Report\%202015.pdf}{\emph{ICES CM 2015/ACOM:07}},

@@ -4,12 +4,14 @@
 \name{catch.r}
 \alias{catch.r}
 \title{Catch at Age Residuals}
-\format{Data frame containing three columns:
+\format{
+Data frame containing three columns:
 \tabular{ll}{
   \code{Year}  \tab year\cr
   \code{Age}   \tab age\cr
   \code{Resid} \tab standardized residual
-}}
+}
+}
 \source{
 ICES (2015) Report of the North-Western Working Group (NWWG).
 \href{https://ices.dk/sites/pub/Publication\%20Reports/Expert\%20Group\%20Report/acom/2015/NWWG/01\%20NWWG\%20Report\%202015.pdf}{\emph{ICES CM 2015/ACOM:07}},
